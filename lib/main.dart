@@ -22,8 +22,12 @@ class MyApp extends StatelessWidget {
             bodyText2: TextStyle(color: Color.fromRGBO(20, 51, 51, 1)),
             headline6: TextStyle(fontSize: 20, fontFamily: 'RobotoCondensed')),
       ),
-      home: CategoriesScreen(),
-      routes: {'/category-meals': (context) => CategoryMealsScreen()},
+      // home: CategoriesScreen(),
+      initialRoute: '/', //default is '/'
+      routes: {
+        '/': (context) => CategoriesScreen(),
+        CategoryMealsScreen.routeName: (context) => CategoryMealsScreen()
+      },
     );
   }
 }
